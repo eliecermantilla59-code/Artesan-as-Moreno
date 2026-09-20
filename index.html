@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Lámpara china artesanal esférica, hecha a mano. Rojo tradicional, franjas doradas y estrellas amarillas. Borla roja y luz cálida interior. $10.000 COP.">
+<meta name="theme-color" content="#1C140E">
+<title>Lámpara China Artesanal · $10.000 COP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1C140E;
+    --bg-2: #241A10;
+    --card: #2B1F13;
+    --card-edge: rgba(214, 168, 60, 0.18);
+    --text: #F5EBD8;
+    --muted: rgba(245, 235, 216, 0.64);
+    --gold: #D6A83C;
+    --gold-2: #E9C97C;
+    --gold-line: rgba(214, 168, 60, 0.28);
+    --red: #C0342E;
+    --red-deep: #B3202B;
+    --star: #F7D056;
+    --green-wa: #1FBF54;
+    --header-h: 76px;
+    --font-display: "Cormorant Garamond", Georgia, serif;
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-cn: "Noto Serif SC", serif;
+    --radius: 20px;
+    --shadow: 0 18px 44px rgba(0, 0, 0, 0.4);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { color-scheme: dark; scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  ul, ol { list-style: none; }
+  img, svg { display: block; max-width: 100%; }
+  button { font-family: inherit; cursor: pointer; background: none; border: none; color: inherit; }
+
+  ::selection { background: var(--gold); color: #201608; }
+
+  .container { width: min(1120px, 92%); margin-inline: auto; }
+
+  section[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
+
+  .eyebrow {
+    font-size: 0.76rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold-2);
+    font-weight: 700;
+  }
+
+  .ic { width: 18px; height: 18px; flex: none; }
+
+  .section-head { text-align: center; max-width: 600px; margin: 0 auto 42px; }
+  .section-head h2 {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 3.8vw, 2.7rem);
+    font-weight: 600;
+    line-height: 1.12;
+    margin: 10px 0 12px;
+  }
+  .section-head p:last-child { color: var(--muted); }
+
+  /* ---------- Botones ---------- */
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 26px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    line-height: 1;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    will-change: transform;
+  }
+  .btn:active { transform: scale(0.97); }
+
+  .btn--wa {
+    background: linear-gradient(135deg, #2BD263, var(--green-wa));
+    color: #FFF;
+    box-shadow: 0 12px 30px rgba(31, 191, 84, 0.32);
+  }
+  .btn--wa:hover {
+    transform: translateY(-3px);
+    background: #2BCB62;
+    box-shadow: 0 18px 42px rgba(31, 191, 84, 0.42);
+  }
+
+  .btn--ghost {
+    border: 1px solid var(--gold-line);
+    color: var(--text);
+    background: rgba(214, 168, 60, 0.05);
+  }
+  .btn--ghost:hover {
+    background: rgba(214, 168, 60, 0.14);
+    border-color: rgba(214, 168, 60, 0.5);
+    transform: translateY(-3px);
+  }
+
+  .btn--header { padding: 10px 18px; font-size: 0.88rem; }
+
+  /* ---------- Header ---------- */
+
+  .header {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 50;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  .header.is-scrolled {
+    background: rgba(24, 17, 11, 0.84);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: var(--header-h);
+  }
+
+  .brand { display: inline-flex; align-items: center; gap: 11px; }
+  .brand__mark { width: 32px; height: auto; }
+  .brand__text { display: flex; flex-direction: column; line-height: 1.15; }
+  .brand__text strong {
+    font-family: var(--font-display);
+    font-size: 1.28rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .brand__text small {
+    font-size: 0.62rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gold-2);
+  }
+
+  .nav { display: flex; align-items: center; gap: 24px; }
+  .nav__list { display: flex; align-items: center; gap: 24px; }
+  .nav__link {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--muted);
+    position: relative;
+    padding: 4px 0;
+    transition: color 0.2s ease;
+  }
+  .nav__link::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -3px;
+    width: 100%; height: 2px;
+    border-radius: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.28s ease;
+  }
+  .nav__link:hover { color: var(--text); }
+  .nav__link:hover::after { transform: scaleX(1); }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px; height: 44px;
+    padding: 10px;
+    border: 1px solid var(--gold-line);
+    border-radius: 12px;
+  }
+  .nav-toggle span {
+    display: block; height: 2px; width: 100%;
+    background: var(--gold-2); border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ---------- Hero ---------- */
+
+  .hero {
+    position: relative;
+    padding: calc(var(--header-h) + 50px) 0 70px;
+    overflow: hidden;
+    background:
+      radial-gradient(55% 48% at 78% 16%, rgba(192, 52, 46, 0.18) 0%, transparent 62%),
+      radial-gradient(46% 42% at 10% 86%, rgba(214, 168, 60, 0.12) 0%, transparent 60%),
+      radial-gradient(110% 90% at 50% 122%, #2A1D10 0%, var(--bg) 55%);
+  }
+
+  .hero__grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.04fr 0.96fr;
+    gap: 46px;
+    align-items: center;
+  }
+
+  .hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.06;
+    margin: 16px 0 18px;
+  }
+  .hero__title em {
+    font-style: italic;
+    color: var(--gold-2);
+  }
+  .hero__lead { color: var(--muted); font-size: 1.05rem; max-width: 50ch; }
+
+  .hero__price {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin: 24px 0 4px;
+    background: rgba(214, 168, 60, 0.1);
+    border: 1px solid var(--gold-line);
+    border-radius: 999px;
+    padding: 10px 22px;
+  }
+  .hero__price .price {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-2);
+  }
+  .hero__price small { color: var(--muted); font-size: 0.82rem; }
+
+  .hero__micro { color: var(--muted); font-size: 0.78rem; margin: 10px 0 22px; }
+
+  .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+  .hero__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid var(--card-edge);
+  }
+  .hero__chips li { font-size: 0.84rem; color: var(--muted); display: flex; align-items: center; gap: 9px; }
+  .hero__chips li::before {
+    content: "";
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 10px rgba(214, 168, 60, 0.8);
+  }
+
+  .hero__media { position: relative; display: flex; justify-content: center; }
+
+  .scene {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--card-edge);
+    box-shadow: var(--shadow);
+    background: radial-gradient(120% 120% at 50% 30%, #2E1C0E 0%, #170E07 62%, #100A05 100%);
+  }
+  .scene svg { width: 100%; height: auto; }
+  .scene::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(56% 52% at 50% 46%, rgba(255, 190, 100, 0.4), rgba(255, 155, 60, 0.14) 55%, transparent 80%);
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+    mix-blend-mode: screen;
+  }
+  .scene.lit::after { opacity: 1; }
+
+  .lamp-wrap { width: 100%; }
+  .lamp-wrap:not(:first-child) { display: none; }
+
+  .g-halo { opacity: 0; transition: opacity 0.7s ease; }
+  .g-bulb { fill: #2A1206; transition: fill 0.5s ease, opacity 0.5s ease; }
+  .g-body { transition: fill 0.5s ease, opacity 0.5s ease; }
+  .g-base { transition: fill 0.5s ease; }
+  .scene.lit .g-halo { opacity: 1; }
+  .scene.lit .g-bulb { fill: #FFE3A6; }
+  .scene.lit .g-lamp-core {
+    filter: drop-shadow(0 0 16px rgba(255, 182, 92, 0.9)) drop-shadow(0 0 46px rgba(255, 142, 50, 0.45));
+  }
+  .g-lamp-core { transition: filter 0.6s ease; }
+
+  .pill {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 18px;
+    border-radius: 999px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    background: rgba(20, 13, 7, 0.82);
+    border: 1px solid var(--gold-line);
+    backdrop-filter: blur(6px);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .pill:hover { transform: translateX(-50%) translateY(-2px); border-color: rgba(214, 168, 60, 0.6); }
+
+  .dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #6B5A3E;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+  [aria-pressed="true"] .dot, .lit .dot {
+    background: #FFD98F;
+    box-shadow: 0 0 12px rgba(255, 190, 90, 0.95);
+  }
+
+  /* ---------- Simulador ---------- */
+
+  .sim {
+    padding: 90px 0;
+    background:
+      radial-gradient(52% 60% at 50% 0%, rgba(255, 190, 110, 0.08), transparent 65%),
+      linear-gradient(180deg, var(--bg) 0%, #130C06 100%);
+  }
+
+  .sim__stage {
+    max-width: 460px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .sim__hint {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 92%;
+    z-index: 2;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: rgba(20, 13, 7, 0.82);
+    border: 1px solid var(--gold-line);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-2);
+    font-weight: 600;
+  }
+
+  /* ---------- Galería ---------- */
+
+  .gallery { padding: 90px 0; background: var(--bg-2); }
+
+  .gallery__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px;
+  }
+
+  .gallery__card {
+    background: var(--card);
+    border: 1px solid var(--card-edge);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .gallery__card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+  }
+
+  .gl-media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: radial-gradient(120% 120% at 50% 30%, #2E1C0E 0%, #170E07 62%, #100A05 100%);
+  }
+  .gl-backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .gl-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .gl-media.photo-in .gl-photo { opacity: 1; }
+  .gl-hint {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    z-index: 2;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: rgba(20, 13, 7, 0.78);
+    border: 1px solid rgba(214, 168, 60, 0.35);
+    color: var(--gold-2);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .gl-media:not(.photo-in) .gl-hint { opacity: 1; }
+
+  .gl-label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: rgba(20, 13, 7, 0.82);
+    border: 1px solid var(--gold-line);
+    color: var(--gold-2);
+  }
+  .gl-label--on { color: #FFD98F; border-color: rgba(255, 190, 90, 0.5); }
+
+  .gallery__meta { padding: 16px 18px; }
+  .gallery__meta h3 { font-family: var(--font-display); font-size: 1.22rem; font-weight: 600; }
+  .gallery__meta p { color: var(--muted); font-size: 0.86rem; }
+
+  /* ---------- Detalles ---------- */
+
+  .details { padding: 90px 0; background: var(--bg); }
+
+  .details__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+  }
+  .detail {
+    background: var(--card);
+    border: 1px solid var(--card-edge);
+    border-radius: var(--radius);
+    padding: 26px 22px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .detail:hover { transform: translateY(-5px); border-color: rgba(214, 168, 60, 0.45); }
+  .detail__icon {
+    width: 48px; height: 48px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: rgba(214, 168, 60, 0.08);
+    border: 1px solid var(--gold-line);
+    color: var(--gold-2);
+    margin-bottom: 16px;
+  }
+  .detail__icon svg { width: 26px; height: 26px; }
+  .detail h3 { font-family: var(--font-display); font-size: 1.28rem; font-weight: 600; margin-bottom: 8px; }
+  .detail p { color: var(--muted); font-size: 0.9rem; }
+
+  /* ---------- Contacto / CTA ---------- */
+
+  .contact { padding: 90px 0 100px; }
+
+  .contact__box {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    border-radius: 26px;
+    padding: 62px 26px;
+    color: #FFF4E0;
+    background:
+      radial-gradient(70% 90% at 50% 0%, rgba(255, 200, 120, 0.18), transparent 60%),
+      linear-gradient(135deg, #B3202B, #8F1F25 60%, #7C1A20);
+    box-shadow: 0 30px 70px rgba(140, 30, 30, 0.35);
+  }
+  .contact__cn {
+    position: absolute;
+    font-family: var(--font-cn);
+    color: rgba(255, 235, 200, 0.08);
+    font-size: 19rem;
+    line-height: 1;
+    user-select: none;
+    pointer-events: none;
+  }
+  .contact__cn--a { top: -50px; left: -24px; }
+  .contact__cn--b { bottom: -80px; right: -24px; font-size: 14rem; }
+
+  .contact__box .eyebrow { color: var(--gold-2); }
+  .contact__box h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.4vw, 3rem);
+    font-weight: 600;
+    margin: 12px 0 12px;
+    line-height: 1.1;
+  }
+  .contact__box > p { max-width: 46ch; margin: 0 auto 24px; color: rgba(255, 244, 224, 0.85); }
+
+  .contact__price {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 235, 200, 0.35);
+    border-radius: 999px;
+    padding: 12px 26px;
+    margin-bottom: 26px;
+  }
+  .contact__price .price { color: var(--gold-2); font-family: var(--font-display); font-size: 1.9rem; font-weight: 700; }
+  .contact__price small { color: rgba(255, 244, 224, 0.8); }
+
+  .contact__perks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 22px;
+    margin-top: 24px;
+    font-size: 0.84rem;
+    color: rgba(255, 244, 224, 0.85);
+  }
+  .contact__perks li { display: flex; align-items: center; gap: 8px; }
+  .contact__perks li::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold-2);
+  }
+
+  /* ---------- Footer ---------- */
+
+  .footer { background: #17100A; border-top: 1px solid var(--card-edge); }
+  .footer__top {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr 0.9fr;
+    gap: 40px;
+    padding: 56px 0 40px;
+  }
+  .footer__brand .brand__text strong { color: #F5EBD8; }
+  .footer__brand .brand__text small { color: var(--gold-2); }
+  .footer__tagline { margin-top: 16px; font-size: 0.93rem; color: var(--muted); max-width: 40ch; }
+
+  .footer__socials { display: flex; gap: 12px; margin-top: 22px; }
+  .footer__socials a {
+    width: 42px; height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    border: 1px solid rgba(214, 168, 60, 0.28);
+    color: var(--gold-2);
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+  .footer__socials a svg { width: 20px; height: 20px; }
+  .footer__socials a:hover { background: rgba(214, 168, 60, 0.14); transform: translateY(-3px); }
+
+  .footer h3 {
+    font-family: var(--font-display);
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--gold-2);
+    margin-bottom: 14px;
+  }
+  .footer__col ul { display: flex; flex-direction: column; gap: 9px; font-size: 0.92rem; color: var(--muted); }
+  .footer__col a { transition: color 0.2s ease; }
+  .footer__col a:hover { color: var(--gold-2); }
+
+  .footer__bar {
+    border-top: 1px solid var(--card-edge);
+    padding: 18px 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  /* ---------- Botón flotante WhatsApp ---------- */
+
+  .wa-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 60;
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #2BD263, var(--green-wa));
+    color: #FFF;
+    box-shadow: 0 10px 28px rgba(31, 191, 84, 0.45);
+    transition: transform 0.25s ease;
+  }
+  .wa-float::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px solid rgba(31, 191, 84, 0.55);
+    animation: pulse 2.4s ease-out infinite;
+  }
+  .wa-float svg { width: 30px; height: 30px; }
+  .wa-float:hover { transform: translateY(-4px) scale(1.04); }
+
+  @keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    70%, 100% { transform: scale(1.5); opacity: 0; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in-view { opacity: 1; transform: none; }
+
+  /* ---------- Responsive ---------- */
+
+  @media (max-width: 960px) {
+    .hero__grid { grid-template-columns: 1fr; gap: 30px; }
+    .hero__media { max-width: 520px; margin: 0 auto; }
+    .hero__info { text-align: center; }
+    .hero__lead { margin-inline: auto; }
+    .hero__actions, .hero__chips { justify-content: center; }
+    .footer__top { grid-template-columns: 1fr; gap: 34px; }
+  }
+
+  @media (max-width: 820px) {
+    .nav-toggle { display: flex; }
+    .nav {
+      position: fixed;
+      top: var(--header-h);
+      left: 0; right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 6px;
+      padding: 18px 5%;
+      background: rgba(24, 17, 11, 0.97);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--card-edge);
+      transform: translateY(-12px);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    }
+    .nav.open { opacity: 1; transform: none; visibility: visible; pointer-events: auto; }
+    .nav__list { flex-direction: column; align-items: stretch; gap: 4px; }
+    .nav__link { display: block; padding: 12px 6px; font-size: 1rem; }
+    .nav__link::after { display: none; }
+    .nav .btn--header { justify-content: center; margin-top: 8px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.001s !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001s !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header id="header" class="header">
+  <div class="container header__inner">
+    <a href="#inicio" class="brand">
+      <svg class="brand__mark" viewBox="0 0 44 52" aria-hidden="true">
+        <line x1="22" y1="2" x2="22" y2="10" stroke="#C9A23C" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="22" cy="12" r="4" fill="none" stroke="#D6A83C" stroke-width="3"/>
+        <ellipse cx="22" cy="28" rx="15" ry="17" fill="#C0342E"/>
+        <line x1="22" y1="12" x2="22" y2="44" stroke="#D6A83C" stroke-width="2.5"/>
+        <path d="M13 20 q-3 8 -3 16" stroke="#D6A83C" stroke-width="2.5" fill="none"/>
+        <path d="M31 20 q3 8 3 16" stroke="#D6A83C" stroke-width="2.5" fill="none"/>
+        <line x1="22" y1="45" x2="22" y2="50" stroke="#B3202B" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <span class="brand__text">
+        <strong>Farol de Oriente</strong>
+        <small>Lámparas Chinas Artesanales</small>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+      <ul class="nav__list">
+        <li><a href="#inicio" class="nav__link">Producto</a></li>
+        <li><a href="#simulador" class="nav__link">Simulador de luz</a></li>
+        <li><a href="#galeria" class="nav__link">Galería</a></li>
+        <li><a href="#detalles" class="nav__link">Detalles</a></li>
+        <li><a href="#contacto" class="nav__link">Contacto</a></li>
+      </ul>
+      <a class="btn btn--wa btn--header" data-wa href="#" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9.4 3 4 8.4 4 15c0 2.9.9 5.6 2.5 7.8L5 28l5.4-1.4c2 .9 4.1 1.4 6.6 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.5c-2.4 0-4.7-.7-6.7-2l-.5-.3-3.2.8.9-3.1-.3-.5c-1.4-2.2-2.2-4.7-2.2-7.4C4 9.2 9.4 5 16 5c3.2 0 6.2 1.2 8.4 3.4S28 12.2 28 15.5c0 6.7-5.4 9-12 9zm6.7-6.7c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.3-.9 1.2-1.1 1.4-.2.2-.4.2-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.2.1-.4-.1-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.2.8.3 1.5.5 2 .6.8.3 1.6.2 2.2.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
+        <span>Pedir por WhatsApp</span>
+      </a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero" id="inicio">
+    <div class="container hero__grid">
+      <div class="hero__info reveal">
+        <p class="eyebrow">Hecha a mano · Bambú · Seda</p>
+        <h1 class="hero__title">Lámparas Chinas Artesanales<br><em>Hechas a mano</em></h1>
+        <p class="hero__lead">Farol esférico en rojo tradicional con franjas doradas y estrellas amarillas, borla de hilo rojo y una luz cálida que transforma la noche en celebración.</p>
+
+        <div class="hero__price">
+          <span class="price">$10.000 COP</span>
+          <small>por lámpara</small>
+        </div>
+        <p class="hero__micro">Precio final · Fabricación artesanal · Disponible con envío</p>
+
+        <div class="hero__actions">
+          <a class="btn btn--wa" data-wa href="#" target="_blank" rel="noopener">
+            Pedir por WhatsApp ($10.000 COP)
+            <svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9.4 3 4 8.4 4 15c0 2.9.9 5.6 2.5 7.8L5 28l5.4-1.4c2 .9 4.1 1.4 6.6 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.5c-2.4 0-4.7-.7-6.7-2l-.5-.3-3.2.8.9-3.1-.3-.5c-1.4-2.2-2.2-4.7-2.2-7.4C4 9.2 9.4 5 16 5c3.2 0 6.2 1.2 8.4 3.4S28 12.2 28 15.5c0 6.7-5.4 9-12 9zm6.7-6.7c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.3-.9 1.2-1.1 1.4-.2.2-.4.2-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.2.1-.4-.1-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.2.8.3 1.5.5 2 .6.8.3 1.6.2 2.2.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
+          </a>
+          <a href="#simulador" class="btn btn--ghost">Probar la luz</a>
+        </div>
+
+        <ul class="hero__chips">
+          <li>100% artesanal a mano</li>
+          <li>Luz cálida interior</li>
+          <li>Decoración hogar y eventos</li>
+          <li>Hogares · Restaurantes · Fiestas</li>
+        </ul>
+      </div>
+
+      <div class="hero__media reveal">
+        <div class="scene lit" id="heroScene" data-scene="heroScene"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simulador de iluminación -->
+  <section class="sim" id="simulador">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">Simulador interactivo</p>
+        <h2>Enciéndela y mira la luz</h2>
+        <p>Este es el efecto real sobre un fondo oscuro: la lámpara se ilumina desde dentro con una resplandor cálido.</p>
+      </header>
+
+      <div class="sim__stage reveal">
+        <span class="sim__hint">Interruptor de luz</span>
+        <div class="scene" id="simScene" data-scene="simScene"></div>
+        <button class="pill" data-scene="simScene" aria-pressed="false">
+          <span class="dot"></span><span class="pill-label">Encender la luz</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">Galería</p>
+        <h2>Apagada de día · encendida de noche</h2>
+        <p>Cinco vistas reales del modelo: frontal, lateral, detalles de base y amarre, y su resplandor encendido.</p>
+      </header>
+
+      <div class="gallery__grid" id="galleryGrid"></div>
+    </div>
+  </section>
+
+  <!-- Detalles -->
+  <section class="details" id="detalles">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="eyebrow">Detalles del producto</p>
+        <h2>Lo que hace especial esta lámpara</h2>
+      </header>
+
+      <div class="details__grid">
+        <div class="detail reveal">
+          <span class="detail__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 21 L12 3 L20 21"/><path d="M8 13 h8"/></g></svg></span>
+          <h3>100% a mano</h3>
+          <p>Armazón, tensado de tela y pintura hechos a mano por un solo artesano, pieza por pieza.</p>
+        </div>
+        <div class="detail reveal">
+          <span class="detail__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><polygon points="12 3 14.5 8.6 20.5 9.3 16 13.4 17.3 19.4 12 16.2 6.7 19.4 8 13.4 3.5 9.3 9.5 8.6"/></g></svg></span>
+          <h3>Rojo y dorado</h3>
+          <p>Acabado en rojo tradicional con franjas verticales doradas y estrellas amarillas de buen augurio.</p>
+        </div>
+        <div class="detail reveal">
+          <span class="detail__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6 C10 4 14 4 18 6 C19 12 19 18 18 22 C14 20 10 20 6 22 C5 18 5 12 6 6 Z"/><path d="M8 12 h8"/></g></svg></span>
+          <h3>Borla y base iluminada</h3>
+          <p>Incluye borla decorativa de hilo rojo y una base inferior que se ilumina junto con la lámpara.</p>
+        </div>
+        <div class="detail reveal">
+          <span class="detail__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 C16 7 16 10 12 13 C8 16 8 19 12 21"/><circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/></g></svg></span>
+          <h3>Luz cálida</h3>
+          <p>Sistema de iluminación interior que resplandece con tono cálido, ideal para ambientes festivos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto / pedidos -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="contact__box reveal">
+        <span class="contact__cn contact__cn--a" aria-hidden="true">燈</span>
+        <span class="contact__cn contact__cn--b" aria-hidden="true">福</span>
+        <p class="eyebrow">Pedidos por WhatsApp</p>
+        <h2>Pide la tuya hoy</h2>
+        <p>Escoge la cantidad que necesites para tu hogar, restaurante o evento. Escríbenos y te confirmamos disponibilidad y envío.</p>
+        <div class="contact__price"><span class="price">$10.000 COP</span><small>por lámpara</small></div>
+        <div style="display:flex;justify-content:center">
+          <a class="btn btn--wa" data-wa href="#" target="_blank" rel="noopener">
+            <svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9.4 3 4 8.4 4 15c0 2.9.9 5.6 2.5 7.8L5 28l5.4-1.4c2 .9 4.1 1.4 6.6 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.5c-2.4 0-4.7-.7-6.7-2l-.5-.3-3.2.8.9-3.1-.3-.5c-1.4-2.2-2.2-4.7-2.2-7.4C4 9.2 9.4 5 16 5c3.2 0 6.2 1.2 8.4 3.4S28 12.2 28 15.5c0 6.7-5.4 9-12 9zm6.7-6.7c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.3-.9 1.2-1.1 1.4-.2.2-.4.2-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.2.1-.4-.1-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.2.8.3 1.5.5 2 .6.8.3 1.6.2 2.2.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
+            Pedir por WhatsApp ($10.000 COP)
+          </a>
+        </div>
+        <p style="margin-top:18px;font-size:0.98rem;opacity:0.92"><a href="https://wa.me/573012665686" target="_blank" rel="noopener" style="color:#FFE6AE;text-decoration:underline">WhatsApp: 301 266 5686</a></p>
+        <ul class="contact__perks">
+          <li>Envíos a toda Colombia</li>
+          <li>Hogar · eventos · restaurantes</li>
+          <li>Empaque artesanal</li>
+          <li>Venta por unidad y mayoreo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__top">
+    <div class="footer__brand">
+      <span class="brand">
+        <svg class="brand__mark" viewBox="0 0 44 52" aria-hidden="true">
+          <line x1="22" y1="2" x2="22" y2="10" stroke="#C9A23C" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="22" cy="12" r="4" fill="none" stroke="#D6A83C" stroke-width="3"/>
+          <ellipse cx="22" cy="28" rx="15" ry="17" fill="#C0342E"/>
+          <line x1="22" y1="12" x2="22" y2="44" stroke="#D6A83C" stroke-width="2.5"/>
+          <path d="M13 20 q-3 8 -3 16" stroke="#D6A83C" stroke-width="2.5" fill="none"/>
+          <path d="M31 20 q3 8 3 16" stroke="#D6A83C" stroke-width="2.5" fill="none"/>
+          <line x1="22" y1="45" x2="22" y2="50" stroke="#B3202B" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="brand__text">
+          <strong>Farol de Oriente</strong>
+          <small>Lámparas Chinas Artesanales</small>
+        </span>
+      </span>
+      <p class="footer__tagline">Lámparas chinas hechas a mano, con la calidez del rojo tradicional y el brillo del dorado. Hechas para iluminar celebraciones.</p>
+      <div class="footer__socials">
+        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 32 32" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.4"><rect x="5" y="5" width="22" height="22" rx="6"/><circle cx="16" cy="16" r="5"/><circle cx="23" cy="9" r="1.4" fill="currentColor" stroke="none"/></g></svg></a>
+        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M22 5h-3a5 5 0 0 0-5 5v3h-3v4h3v9h4v-9h3l1-4h-4v-3a1 1 0 0 1 1-1h3z"/></svg></a>
+        <a data-wa href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9.4 3 4 8.4 4 15c0 2.9.9 5.6 2.5 7.8L5 28l5.4-1.4c2 .9 4.1 1.4 6.6 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.5c-2.4 0-4.7-.7-6.7-2l-.5-.3-3.2.8.9-3.1-.3-.5c-1.4-2.2-2.2-4.7-2.2-7.4C4 9.2 9.4 5 16 5c3.2 0 6.2 1.2 8.4 3.4S28 12.2 28 15.5c0 6.7-5.4 9-12 9zm6.7-6.7c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.3-.9 1.2-1.1 1.4-.2.2-.4.2-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.2.1-.4-.1-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.2.8.3 1.5.5 2 .6.8.3 1.6.2 2.2.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer__col">
+      <h3>Producto</h3>
+      <ul>
+        <li><a href="#inicio">La lámpara</a></li>
+        <li><a href="#simulador">Simulador de luz</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#detalles">Detalles</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h3>Contacto</h3>
+      <ul>
+        <li><a data-wa href="#" target="_blank" rel="noopener">WhatsApp · 301 266 5686</a></li>
+        <li><a href="mailto:pedidos@faroldeoriente.co">pedidos@faroldeoriente.co</a></li>
+        <li>Envíos a toda Colombia</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bar">
+    <div class="container">© 2026 Farol de Oriente · Lámpara china artesanal · $10.000 COP. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<a class="wa-float" data-wa href="#" target="_blank" rel="noopener" aria-label="Pedir por WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9.4 3 4 8.4 4 15c0 2.9.9 5.6 2.5 7.8L5 28l5.4-1.4c2 .9 4.1 1.4 6.6 1.4 6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21.5c-2.4 0-4.7-.7-6.7-2l-.5-.3-3.2.8.9-3.1-.3-.5c-1.4-2.2-2.2-4.7-2.2-7.4C4 9.2 9.4 5 16 5c3.2 0 6.2 1.2 8.4 3.4S28 12.2 28 15.5c0 6.7-5.4 9-12 9zm6.7-6.7c-.4-.2-2.2-1.1-2.5-1.2-.3-.1-.6-.2-.8.2-.2.3-.9 1.2-1.1 1.4-.2.2-.4.2-.8.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8l.6-.7c.2-.2.3-.4.4-.6.1-.2.1-.4-.1-.6-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.2 3.4 1.4 3.6c.2.2 2.4 3.7 5.9 5.2.8.3 1.5.5 2 .6.8.3 1.6.2 2.2.1.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>
+</a>
+
+<noscript>
+  <p style="padding:12px;text-align:center;background:#B3202B;color:#FFF">
+    Activa JavaScript para ver el simulador de luz y las imágenes alternativas. <a href="https://wa.me/573012665686" style="text-decoration:underline">Pide tu lámpara por WhatsApp</a>
+  </p>
+</noscript>
+
+<script>
+(function () {
+  "use strict";
+
+  var WA_NUMBER = "573012665686";
+  var WA_MSG = "Hola, quiero pedir la l\u00E1mpara china artesanal de $10.000 COP.";
+  var WA_HREF = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(WA_MSG);
+
+  document.querySelectorAll("[data-wa]").forEach(function (a) {
+    a.href = WA_HREF;
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  function Rnd(v) { return Math.round(v * 100) / 100; }
+
+  function starPts(cx, cy, outer, inner) {
+    var pts = [], i;
+    for (i = 0; i < 10; i++) {
+      var rad = (i % 2 === 0) ? outer : inner;
+      var ang = -Math.PI / 2 + i * Math.PI / 5;
+      pts.push(Rnd(cx + rad * Math.cos(ang)) + "," + Rnd(cy + rad * Math.sin(ang)));
+    }
+    return pts.join(" ");
+  }
+
+  /* ---------- Lámpara esférica roja ---------- */
+
+  function lampSVG(ctx, opt) {
+    var haloId = ctx.halo;
+    var bodyId = ctx.body;
+    var g = ctx.gold;
+    var LIT = opt && opt.lit;
+    var stHalo = LIT ? ' style="opacity:1"' : '';
+    var stBulb = LIT ? ' style="fill:#FFE3A6"' : '';
+    var stBase = LIT ? ' style="fill:#FFB868"' : '';
+
+    return '<defs>' +
+      '<radialGradient id="' + haloId + '" cx="50%" cy="50%" r="50%">' +
+      '<stop offset="0%" stop-color="#FFC873" stop-opacity="0.9"/>' +
+      '<stop offset="45%" stop-color="#FFB14E" stop-opacity="0.34"/>' +
+      '<stop offset="100%" stop-color="#FFB14E" stop-opacity="0"/></radialGradient>' +
+      '<radialGradient id="' + bodyId + '" cx="40%" cy="32%" r="78%">' +
+      '<stop offset="0%" stop-color="#D84942"/>' +
+      '<stop offset="55%" stop-color="#C0342E"/>' +
+      '<stop offset="100%" stop-color="#8F211F"/></radialGradient>' +
+      '</defs>' +
+
+      '<g class="g-lamp-core">' +
+
+      '<circle class="g-halo" cx="150" cy="196" r="168" fill="url(#' + haloId + ')"' + stHalo + '/>' +
+
+      '<line x1="150" y1="0" x2="150" y2="22" stroke="#D6A83C" stroke-width="4" stroke-linecap="round"/>' +
+      '<circle cx="150" cy="28" r="9" fill="none" stroke="#D6A83C" stroke-width="4"/>' +
+
+      '<path d="M112 52 h76 l-9 18 h-58 z" fill="#D6A83C"/>' +
+      '<path d="M118 70 h64 l-8 12 h-48 z" fill="#B8891F"/>' +
+
+      '<ellipse class="g-bulb" cx="150" cy="192" rx="72" ry="86" opacity="0.95"' + stBulb + '/>' +
+
+      '<circle cx="150" cy="196" r="122" fill="url(#' + bodyId + ')" stroke="#7C1A20" stroke-width="3" opacity="0.92" class="g-body"/>' +
+
+      '<g stroke="rgba(120,20,20,0.5)" fill="none" stroke-width="3" opacity="0.6" class="g-tex">' +
+      '<path d="M84 150 q-8 34 -2 66"/>' +
+      '<path d="M216 150 q8 34 2 66"/>' +
+      '<path d="M150 80 q-16 18 -14 44"/>' +
+      '<path d="M150 312 q16 -18 14 -44"/>' +
+      '<path d="M96 230 q20 24 46 26"/>' +
+      '<path d="M204 230 q-20 24 -46 26"/>' +
+      '</g>' +
+
+      '<g fill="none" stroke="#E3BC62" stroke-width="6" stroke-linecap="round" opacity="0.9" class="g-stripes">' +
+      '<path d="M150 82 L150 310"/>' +
+      '<path d="M116 96 C 96 140 96 252 116 296"/>' +
+      '<path d="M184 96 C 204 140 204 252 184 296"/>' +
+      '<path d="M104 128 C 92 160 92 232 104 264"/>' +
+      '<path d="M196 128 C 208 160 208 232 196 264"/>' +
+      '</g>' +
+
+      '<g class="g-stars">' +
+      '<polygon points="' + starPts(132, 122, 15, 6.5) + '" fill="#F7D056" stroke="#E9B63C" stroke-width="1.6"/>' +
+      '<polygon points="' + starPts(186, 168, 11, 4.8) + '" fill="#F7D056" stroke="#E9B63C" stroke-width="1.4"/>' +
+      '<polygon points="' + starPts(122, 246, 9.5, 4) + '" fill="#F7D056" stroke="#E9B63C" stroke-width="1.4"/>' +
+      '<polygon points="' + starPts(172, 276, 14, 6) + '" fill="#F7D056" stroke="#E9B63C" stroke-width="1.6"/>' +
+      '</g>' +
+
+      '<rect x="116" y="308" width="68" height="12" rx="6" fill="url(#' + g + ')"/>' +
+      '<path class="g-base" d="M124 320 h52 l-5 16 h-42 z" fill="#8F211F"' + stBase + '/>' +
+
+      '<circle cx="150" cy="352" r="9" fill="#B3202B"/>' +
+      '<g stroke="#C0342E" stroke-width="2.6" stroke-linecap="round">' +
+      '<path d="M150 360 L138 396"/>' +
+      '<path d="M150 360 L144 402"/>' +
+      '<path d="M150 360 L150 406"/>' +
+      '<path d="M150 360 L156 402"/>' +
+      '<path d="M150 360 L162 396"/>' +
+      '</g>' +
+      '<line x1="150" y1="340" x2="150" y2="352" stroke="#D6A83C" stroke-width="3" stroke-linecap="round"/>' +
+
+      '</g>';
+  }
+
+  function lampScene(suf) {
+    var ctx = {
+      halo: "__halo-" + suf,
+      body: "__body-" + suf,
+      gold: "__gold-" + suf
+    };
+    var goldId = ctx.gold;
+    var goldGrad = '<linearGradient id="' + goldId + '" x1="0" y1="0" x2="0" y2="1">' +
+      '<stop offset="0" stop-color="#E7C77E"/><stop offset="1" stop-color="#B8891F"/></linearGradient>';
+
+    return '<svg viewBox="0 0 300 430" role="img" aria-label="Lámpara china esférica roja con franjas doradas y estrellas">' +
+      '<defs>' + goldGrad + '</defs>' + lampSVG(ctx) + '</svg>';
+  }
+
+  /* ---------- Construcción de escenas hero y simulador ---------- */
+
+  document.getElementById("heroScene").innerHTML = '<div class="lamp-wrap">' + lampScene("h") + '</div>';
+  document.getElementById("simScene").innerHTML = '<div class="lamp-wrap">' + lampScene("s") + '</div>';
+
+  /* ---------- Galería ---------- */
+
+  function placeholderSVG(mode, num) {
+    var suf = "gf" + num;
+    var ctx = { halo: "__halo-" + suf, body: "__body-" + suf, gold: "__gold-" + suf };
+    var lit = mode === "night";
+    var bg = lit
+      ? '<radialGradient id="__gbg-' + suf + '" cx="50%" cy="42%" r="70%">' +
+        '<stop offset="0%" stop-color="#2E1C10"/><stop offset="100%" stop-color="#0F0804"/></radialGradient>'
+      : '<linearGradient id="__gbg-' + suf + '" x1="0" y1="0" x2="0" y2="1">' +
+        '<stop offset="0%" stop-color="#F4E7CC"/><stop offset="100%" stop-color="#E5D0A4"/></linearGradient>';
+    return '<svg class="gl-backdrop" viewBox="0 0 300 400" role="img" aria-label="Ilustración de la lámpara china roja">' +
+      '<defs>' + bg + '</defs>' +
+      '<rect x="0" y="0" width="300" height="400" fill="url(#__gbg-' + suf + ')"/>' +
+      (lit
+        ? '<circle cx="240" cy="54" r="18" fill="#FFF3D6" opacity="0.9"/><circle cx="44" cy="76" r="2" fill="#E7D49A"/><circle cx="92" cy="40" r="2" fill="#E7D49A"/>'
+        : '') +
+      '<g class="g-lamp-core">' + lampSVG(ctx, { lit: lit }) +
+      '<ellipse cx="150" cy="384" rx="120" ry="16" fill="' + (lit ? '#FFB56A' : 'rgba(60,40,20,0.6)') + '" opacity="' + (lit ? "0.4" : "0.7") + '"/>' +
+      '</g>' +
+      '</svg>';
+  }
+
+  var GALLERY = [
+    { src: "./imagenes/lampara-frontal.jpg", alt: "Lámpara china artesanal roja con franjas doradas y estrellas amarillas, vista frontal sobre fondo limpio", label: "Frontal · apagada", mode: "day", title: "Vista frontal", caption: "El modelo en todo su colorido: rojo, dorado y estrellas." },
+    { src: "./imagenes/lampara-lateral.jpg", alt: "Lámpara china artesanal roja vista lateral en ángulo de tres cuartos, textura y curvatura del papel", label: "Lateral · tres cuartos", mode: "day", title: "Curvatura y textura", caption: "Perfil que resalta el trabajo manual del papel." },
+    { src: "./imagenes/lampara-detalle-base.jpg", alt: "Detalle inferior de la lámpara china artesanal roja, ensamble de la base y borla de hilo rojo", label: "Detalle · base y borla", mode: "day", title: "Ensamble y borla", caption: "Base, sujeción y la borla de hilo rojo que colorea el remate." },
+    { src: "./imagenes/lampara-detalle-amarre.jpg", alt: "Vista superior de la lámpara china artesanal roja, borde y punto de amarre del cordel", label: "Detalle · amarre", mode: "day", title: "Punto de amarre", caption: "El cordel y el remate superior, detalle por detalle." },
+    { src: "./imagenes/lampara-nocturna.jpg", alt: "Lámpara china artesanal roja encendida en ambiente oscuro con luz cálida interior", label: "Encendida · de noche", mode: "night", title: "Luz cálida nocturna", caption: "El resplandor cálido que se enciende al anochecer." }
+  ];
+
+  var gridEl = document.getElementById("galleryGrid");
+  gridEl.innerHTML = GALLERY.map(function (g, i) {
+    return '<figure class="gallery__card reveal">' +
+      '<div class="gl-media">' +
+      '<span class="gl-label' + (g.mode === "night" ? " gl-label--on" : "") + '">' + g.label + '</span>' +
+      '<span class="gl-hint">Agrega tu foto</span>' +
+      placeholderSVG(g.mode, i + 1) +
+      '<img class="gl-photo" src="' + g.src + '" alt="' + g.alt + '" width="400" height="500"' + (i === 0 ? ' loading="eager" fetchpriority="high"' : ' loading="lazy"') + '>' +
+      '</div>' +
+      '<figcaption class="gallery__meta"><h3>' + g.title + '</h3><p>' + g.caption + '</p></figcaption>' +
+      '</figure>';
+  }).join("");
+
+  document.querySelectorAll(".gl-photo").forEach(function (img) {
+    img.addEventListener("load", function () {
+      img.closest(".gl-media").classList.add("photo-in");
+    });
+    img.addEventListener("error", function () {
+      img.closest(".gl-media").classList.remove("photo-in");
+    });
+  });
+
+  /* ---------- Simulador ---------- */
+
+  function setLit(id, lit) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.classList.toggle("lit", lit);
+    document.querySelectorAll('[data-scene="' + id + '"]').forEach(function (b) {
+      b.setAttribute("aria-pressed", lit ? "true" : "false");
+      var lab = b.querySelector(".pill-label");
+      if (lab) lab.textContent = lit ? "Apagar la luz" : "Encender la luz";
+    });
+  }
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-scene]");
+    if (!b) return;
+    var id = b.getAttribute("data-scene");
+    var el = document.getElementById(id);
+    if (!el) return;
+    setLit(id, !el.classList.contains("lit"));
+  });
+
+  setLit("heroScene", true);
+  setLit("simScene", false);
+
+  /* ---------- Header / menú móvil ---------- */
+
+  var header = document.getElementById("header");
+  window.addEventListener("scroll", function () {
+    header.classList.toggle("is-scrolled", window.scrollY > 24);
+  }, { passive: true });
+
+  var navToggle = document.getElementById("navToggle");
+  var nav = document.getElementById("nav");
+  navToggle.addEventListener("click", function () {
+    var open = nav.classList.toggle("open");
+    navToggle.classList.toggle("open", open);
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    navToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+  });
+  nav.addEventListener("click", function (e) {
+    if (e.target.closest("a")) {
+      nav.classList.remove("open");
+      navToggle.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  /* ---------- Aparición al hacer scroll ---------- */
+
+  var io = "IntersectionObserver" in window ? new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        en.target.classList.add("in-view");
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.12 }) : null;
+
+  function observeReveals() {
+    var els = document.querySelectorAll(".reveal");
+    if (!io) { els.forEach(function (el) { el.classList.add("in-view"); }); return; }
+    els.forEach(function (el) { io.observe(el); });
+  }
+
+  observeReveals();
+})();
+</script>
+</body>
+</html>
